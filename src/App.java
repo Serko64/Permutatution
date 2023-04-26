@@ -13,13 +13,10 @@ public class App {
         int[] tempArray = new int[nums.length];
 
         for (int index = 0; index < nums.length; index++) {
-            int length = nums.length - 1;
-            for (int i = 0; i < nums.length; i++) {
-                int temp = tempArray[length];
-                tempArray[length] = nums[length];
-                temp=nums[length];
-                tempArray[length]=temp;
-                length--;
+            for (int i = 1; i < nums.length; i++) {
+                tempArray[i-1] = nums[nums.length - i - 1];
+                int temp = nums[nums.length - i];
+                tempArray[nums.length - 1] = temp;
             }
             list.add(tempArray[index]);
             output.add(list);
