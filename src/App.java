@@ -14,7 +14,7 @@ public class App {
 
         for (int index = 0; index < nums.length; index++) {
             for (int i = 1; i < nums.length; i++) {
-                tempArray[i-1] = nums[nums.length - i - 1];
+                tempArray[i] = nums[nums.length  - 1];
                 int temp = nums[nums.length - i];
                 tempArray[nums.length - 1] = temp;
             }
