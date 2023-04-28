@@ -10,19 +10,27 @@ public class App {
         List<List<Integer>> output = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
 
-        int[] tempArray = nums.clone();
+        int[] tempArray = new int[nums.length];
 
         for (int index = 0; index < permutation(nums.length); index++) {
-
-            list.add(tempArray[index]);
-
-            for (int i = nums.length - 1; i >= 0; i--) {
+            for (int i = nums.length-1 ; i > 0; i--) {
+                System.out.println(i);
+                
                 int temp = nums[i];
-                tempArray[index] = temp;
-            }
-            output.add(list);
+                tempArray[i - 1] = temp;
+                tempArray[i] = nums[i];
+                System.out.println("hello");
+                for (int p : tempArray) {
+                    list.add(p);
+                    System.out.println("h");
+                }
 
-        }
+            }
+            
+           
+            output.add(list);}
+      
+
         return output;
     }
 
