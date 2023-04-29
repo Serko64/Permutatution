@@ -8,28 +8,23 @@ public class App {
 
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> output = new ArrayList<>();
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
 
         int[] tempArray = new int[nums.length];
 
-        for (int index = 0; index < permutation(nums.length); index++) {
-            for (int i = nums.length-1 ; i > 0; i--) {
-                System.out.println(i);
-                
+        for (int index = 0; index < nums.length; index++) {
+            for (int i = 0; i < nums.length; i++) {
+                list.add(tempArray[i]);
                 int temp = nums[i];
-                tempArray[i - 1] = temp;
-                tempArray[i] = nums[i];
-                System.out.println("hello");
-                for (int p : tempArray) {
-                    list.add(p);
-                    System.out.println("h");
-                }
-
+                tempArray[i + 1] = temp;
+                System.out.print(tempArray[i + 1]);
+                tempArray[i] = nums[i + 1];
+                System.out.println(tempArray[i]);
+                list.add(tempArray[i++]);
+                nums = tempArray.clone();
             }
-            
-           
-            output.add(list);}
-      
+            output.add(list);
+        }
 
         return output;
     }
