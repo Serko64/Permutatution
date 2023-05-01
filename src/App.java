@@ -10,19 +10,26 @@ public class App {
         List<List<Integer>> output = new ArrayList<>();
         List<Integer> list = new ArrayList<Integer>();
 
-        for (int i = 0; i < permutation(nums.length); i++) {
+        int permitted=permutation(nums.length);
+        int g=0;
+        for (int i = 0; i < permitted; i++) {
+            if (g==nums.length)g=0;
             for (int integer : nums) {
                 list.add(integer);
             }
-            for (int j = 0; j < permutation(nums.length) - ((nums.length==2)?1:nums.length*nums.length); j++) {
-                int temp = nums[j];
+
+            int temp = nums[g];
+
+            for (int j = 0; j < permitted - ((nums.length==2)?1:nums.length+1); j++) {
                 nums[j] = nums[j + 1];
                 nums[j + 1] = temp;
             }
+        
 
             output.add(list);
             list = new ArrayList<Integer>();
 
+            g++;
         }
 
         return output;
