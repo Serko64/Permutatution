@@ -13,24 +13,23 @@ public class App {
         int permitted = permutation(nums.length);
         int g = 0;
         for (int i = 0; i < permitted; i++) {
-            if (g == nums.length)
-                g = 0;
+         
                 
             for (int integer : nums) {
                 list.add(integer);
             }
 
-            int temp = nums[g];
 
-            for (int j = 0; j < permitted - ((nums.length == 2) ? 1 : nums.length + 1); j++) {
+            for (int j = 1; j < permitted - ((nums.length == 2) ? 1 : nums.length + 1); j++) {
+                int temp2= nums[j];
                 nums[j] = nums[j + 1];
-                nums[j + 1] = temp;
+                nums[j + 1] = temp2;
             }
 
             output.add(list);
             list = new ArrayList<Integer>();
-
             g++;
+
         }
 
         return output;
