@@ -2,7 +2,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int[] input = { 0, 1, 2 };
+        int[] input = { 5, 4, 6, 2 };
         System.out.println(permute(input));
     }
 
@@ -11,25 +11,35 @@ public class App {
         List<Integer> list = new ArrayList<Integer>();
 
         int permitted = permutation(nums.length);
-        int g = 0;
+        int firstArray = 0;
+        int changeFirstArray = 1;
+
         for (int i = 0; i < permitted; i++) {
-         
-                
+
             for (int integer : nums) {
                 list.add(integer);
             }
-
-
-            for (int j = 1; j < permitted - ((nums.length == 2) ? 1 : nums.length + 1); j++) {
-                int temp2= nums[j];
+            output.add(list);
+            list = new ArrayList<Integer>();
+            System.out.println(permitted - nums.length);
+            
+            for (int j = ((nums.length == 2) ? 0 : 1); j < permitted
+                    - ((nums.length == 2) ? 1 : nums.length + 1); j++) {
+                int temp2 = nums[j];
                 nums[j] = nums[j + 1];
                 nums[j + 1] = temp2;
             }
 
-            output.add(list);
-            list = new ArrayList<Integer>();
-            g++;
-
+            firstArray++;
+            if (firstArray == 2 || firstArray == 4) {
+                for (Integer integer : nums) {
+                    System.out.println(integer);
+                }
+                int temp2 = nums[0];
+                nums[0] = nums[changeFirstArray];
+                nums[changeFirstArray] = temp2;
+                changeFirstArray++;
+            }
         }
 
         return output;
