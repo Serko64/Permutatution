@@ -11,13 +11,7 @@ public class App {
         List<List<Integer>> output = new ArrayList<>();
         List<Integer> list = new ArrayList<Integer>();
 
-        if (nums.length == 1) {
-            list.add(nums[0]);
-            output.add(list);
-        }
-
-        else {
-            int permitted = permutation(nums.length);
+            int permitted = permutation(nums.length);System.out.println(permitted);
             int currentLength = nums.length - 1;
             int switchFirst = 0;
             int switchIndex = 1;
@@ -26,13 +20,15 @@ public class App {
                 for (int integer : nums) {
                     list.add(integer);
                 }
+                
                 output.add(list);
                 list = new ArrayList<Integer>();
 
-                if (nums.length >= 2) {
+            
                     if ((currentLength - 1) == 0||(currentLength ) == 0) {
                         currentLength = nums.length - 1;
                     } 
+                    if(nums.length>1){
                     int temp2 = nums[currentLength];
                     nums[currentLength] = nums[currentLength - 1];
                     nums[currentLength - 1] = temp2;
@@ -51,10 +47,10 @@ public class App {
                             switchFirst++;
                         }
                     }
-                }
+                    }
             }
-        }
-       
+        
+    
         return output;
     }
 
