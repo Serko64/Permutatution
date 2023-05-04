@@ -24,18 +24,19 @@ public class AppTest {
     public void test2() {
         int[] test2 = { 1, 2, 3 };
         List<Integer> list2 = new ArrayList<>();
-        int[][] test2Result = { { 1, 2, 3 }, { 1, 3, 2 }, { 2, 1, 3 }, { 2, 3, 1 }, { 3, 1, 2 }, { 3, 2, 1 } };
-        int i = 0;
-        for (Integer integer : test2Result[i]) {
-            list2.add(integer);
-            System.out.println(integer);
-            i++;
-        }
         List<List<Integer>> listOutput2 = new ArrayList<>();
-        listOutput2.add(list2);
-        assertEquals(App.permute(test2), listOutput2);
-        System.out.println(App.permute(test2));
 
+        int[][] test2Result = { { 1, 2, 3 }, { 1, 3, 2 }, { 2, 1, 3 }, { 2, 3, 1 }, { 3, 1, 2 }, { 3, 2, 1 } };
+
+        for (int j = 0; j < test2Result.length; j++) {
+            for (int i = 0;i < test2Result.length; i++) {
+                list2.add(test2Result[j][i]);
+
+            }
+            listOutput2.add(list2);
+        }
+
+        assertEquals(App.permute(test2), listOutput2);
 
     }
 
@@ -49,10 +50,12 @@ public class AppTest {
                 { 4, 2, 6, 5 }, { 6, 5, 4, 2 }, { 6, 5, 2, 4 }, { 6, 4, 5, 2 }, { 6, 4, 2, 5 }, { 6, 2, 5, 4 },
                 { 6, 2, 4, 5 }, { 2, 5, 4, 6 }, { 2, 5, 6, 4 }, { 2, 4, 5, 6 }, { 2, 4, 6, 5 }, { 2, 6, 5, 4 },
                 { 2, 6, 4, 5 } };
-        int a = 0;
-        for (Integer integer : test3Result[a]) {
-            list3.add(integer);
-            a++;
+        for (int i = 0; i < test3Result.length; i++) {
+
+            for (Integer integer : test3Result[i]) {
+                list3.add(integer);
+                
+            }
         }
         List<List<Integer>> listOutput3 = new ArrayList<>();
 
