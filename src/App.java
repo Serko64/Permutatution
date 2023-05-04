@@ -21,7 +21,6 @@ public class App {
             int currentLength = nums.length - 1;
             int switchFirst = 0;
             int switchIndex = 1;
-System.out.println(permitted);
             for (int i = 0; i < permitted; i++) {
 
                 for (int integer : nums) {
