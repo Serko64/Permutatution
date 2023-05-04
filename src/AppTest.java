@@ -282,7 +282,7 @@ public class AppTest {
             list4 = new ArrayList<>();
 
         }
-        assertTrue((App.permute(test4)).stream().anyMatch(l -> l.containsAll(listOutput4)));
+        assertTrue(listOutput4.containsAll(App.permute(test4)));
 
     }
 }
