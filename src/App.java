@@ -41,7 +41,7 @@ public class App {
                             switchFirst = 0;
                             switchIndex++;
                             if (switchIndex == nums.length)
-                                switchIndex = 0;
+                                switchIndex = 1;
 
                         } else {
                             switchFirst++;
@@ -50,7 +50,7 @@ public class App {
                     }
             }
         
-    
+    System.out.println(output.size());
         return output;
     }
 

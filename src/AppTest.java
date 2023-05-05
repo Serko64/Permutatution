@@ -282,7 +282,7 @@ public class AppTest {
             list4 = new ArrayList<>();
 
         }
-        assertTrue(listOutput4.containsAll(App.permute(test4)));
+        assertTrue(listOutput4.contains(App.permute(test4)));
 
     }
 }
