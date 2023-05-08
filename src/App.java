@@ -15,7 +15,7 @@ public class App {
 
         int currentLength = nums.length - 1;
         int switchFirst = 0;
-        int switchIndex=0;
+        int switchIndex = 1;
 
         for (int i = 0; i < permitted; i++) {
 
@@ -39,13 +39,11 @@ public class App {
                 nums[switchIndex] = tempFirst;
                 switchFirst = 0;
                 switchIndex++;
-
             } else {
                 switchFirst++;
             }
 
         }
-
         return output;
     }
 
