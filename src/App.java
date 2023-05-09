@@ -2,7 +2,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int[] input = { 5, 4, 6, 2 };
+        int[] input = { 6,3,2,7,4,-1 };
         System.out.println(permute(input));
     }
 
@@ -15,16 +15,16 @@ public class App {
 
         int currentLength = nums.length - 1;
         int switchFirst = 0;
-        int switchIndex = 1;
+        int switchIndex=0;
 
         for (int i = 0; i < permitted; i++) {
 
-            for (int integer : nums) {
-                list.add(integer);
-            }
-
-            output.add(list);
-            list = new ArrayList<Integer>();
+                for (int integer : nums) {
+                    list.add(integer);
+                }
+                
+                output.add(list);
+                list = new ArrayList<Integer>();
 
             if ((currentLength - 1) == 0)
                 currentLength = nums.length - 1;
@@ -39,11 +39,13 @@ public class App {
                 nums[switchIndex] = tempFirst;
                 switchFirst = 0;
                 switchIndex++;
+
             } else {
                 switchFirst++;
             }
 
         }
+
         return output;
     }
 
