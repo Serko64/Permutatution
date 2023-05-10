@@ -86,7 +86,6 @@ public class AppTest {
 
     }
 
-    
     @Test
     public void test4() {
         int[] test4 = { 6, 3, 2, 7, 4, -1 };
@@ -282,7 +281,7 @@ public class AppTest {
             list4 = new ArrayList<>();
 
         }
-        assertTrue(listOutput4.contains(App.permute(test4)));
+        assertTrue( App.permute(test4).containsAll(listOutput4));
 
     }
 }
