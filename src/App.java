@@ -38,7 +38,9 @@ public class App {
                         nums[switchIndex] = tempFirst;
                         switchIndex++;
                         switchFirst = 0;
-                        if (nums.length == 6)
+
+                        //Länge 6 
+                        if (nums.length == 6&&(currentLength%2)!=0)
                             currentLength++;
 
                         if (switchIndex == nums.length)
