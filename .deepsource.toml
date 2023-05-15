@@ -4,4 +4,8 @@ version = 1
 name = "java"
 
   [analyzers.meta]
+<<<<<<< HEAD
   runtime_version = "17"
+=======
+  runtime_version = "11"
+>>>>>>> master
