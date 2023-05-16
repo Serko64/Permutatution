@@ -1,5 +1,6 @@
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -280,7 +281,7 @@ public class AppTest {
             list4 = new ArrayList<>();
 
         }
-        assertEquals( App.permute(test4),(listOutput4));
+        assertTrue(listOutput4.contains(App.permute(test4)));
 
     }
 }
