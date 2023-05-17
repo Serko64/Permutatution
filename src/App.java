@@ -45,7 +45,7 @@ public class App {
                 nums[currentLength - 1] = temp2;
                 currentLength -= 1;
 
-                if (switchFirst == (permitted / nums.length) - 1) {
+                if ((switchFirst == (permitted / nums.length) - 1)) {
 
                     int tempFirst = nums[0];
                     nums[0] = nums[switchIndex];
