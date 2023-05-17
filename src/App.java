@@ -26,8 +26,8 @@ public class App {
             for (int integer : nums) {
                 list.add(integer);
             }
-            output.add(list);
             if (!output.contains(list)) {
+                output.add(list);
                 bool = true;
             }
 
@@ -56,8 +56,8 @@ public class App {
                         switchIndex = 1;
 
                     if (bool) {
-                        int tempFirst2 = nums[switchLastIndex - 2];
-                        nums[switchLastIndex--] = nums[switchLastIndex - 2];
+                        int tempFirst2 = nums[switchLastIndex - (i-2)];
+                        nums[switchLastIndex--] = nums[switchLastIndex -(i- 2)];
                         nums[switchIndex] = tempFirst2;
                         switchLastIndex -= 1;
                         if (switchLastIndex - 1 == 0)
